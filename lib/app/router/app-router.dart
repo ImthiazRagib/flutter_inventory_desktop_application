@@ -1,3 +1,4 @@
+
 import 'package:flutter_inventory_desktop_application/features/dashboard/dashboard.dart';
 import 'package:go_router/go_router.dart';
 
