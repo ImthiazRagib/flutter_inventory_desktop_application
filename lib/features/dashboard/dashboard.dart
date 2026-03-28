@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_inventory_desktop_application/features/dashboard/appbar/app-bar.dart';
+import 'package:flutter_inventory_desktop_application/features/dashboard/appbar/app_bar.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
@@ -20,7 +20,7 @@ class Dashboard extends StatelessWidget {
       ),
       body: Center(
         child: Text(
-          'Dashboard',
+          'Dashboard XD',
           style: Theme.of(context).textTheme.headlineMedium,
         ),
       ),

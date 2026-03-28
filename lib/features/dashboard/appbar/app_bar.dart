@@ -86,7 +86,7 @@ class CustomTopBar extends StatelessWidget implements PreferredSizeWidget {
                     children: [
                       CircleAvatar(
                         radius: 18,
-                        child: Icon(Icons.person, size: 20),
+                        child: Icon(Icons.shopping_bag_rounded, size: 20),
                       ),
                       SizedBox(width: 10),
                       Column(
@@ -121,11 +121,11 @@ class CustomTopBar extends StatelessWidget implements PreferredSizeWidget {
               ],
               child: Container(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 10,
+                  horizontal: 12,
                   vertical: 6,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.12),
+                  color: AppColors.primaryColor,
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: const Row(
@@ -133,12 +133,10 @@ class CustomTopBar extends StatelessWidget implements PreferredSizeWidget {
                   children: [
                     CircleAvatar(
                       radius: 16,
-                      child: Icon(Icons.person, size: 18),
+                      child: Icon(Icons.shopping_bag_rounded, size: 14),
                     ),
                     SizedBox(width: 8),
-                    Text('Account', style: TextStyle(color: Colors.white)),
-                    SizedBox(width: 4),
-                    Icon(Icons.keyboard_arrow_down, color: Colors.white),
+                    Text('Al Tunaji', style: TextStyle(fontSize: 14, color: AppColors.lightColor))
                   ],
                 ),
               ),
