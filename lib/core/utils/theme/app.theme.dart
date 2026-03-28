@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_inventory_desktop_application/utils/app.colors.dart';
+import 'package:flutter_inventory_desktop_application/core/utils/app.colors.dart';
 
 class AppTheme {
-  static final LightTheme = ThemeData(
+  static final lightTheme = ThemeData(
     useMaterial3: true,
     colorSchemeSeed: AppColors.primaryColor,
     scaffoldBackgroundColor: AppColors.backgroundColor,
@@ -13,7 +13,7 @@ class AppTheme {
     ),
   );
 
-  static final DarkTheme = ThemeData(
+  static final darkTheme = ThemeData(
     useMaterial3: true,
     colorSchemeSeed: AppColors.primaryColor,
     scaffoldBackgroundColor: AppColors.darkBackgroundColor,
