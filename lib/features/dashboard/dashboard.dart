@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_inventory_desktop_application/features/dashboard/appbar/app_bar.dart';
-
+import 'package:flutter_inventory_desktop_application/app/layout/app_layout.dart';
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomTopBar(
+      body: AppLayout(
+        currentRoute: '/',
+        currentPage: 'Dashboard',
         onNavigate: (page) {
           // Handle navigation
         },
@@ -17,12 +18,8 @@ class Dashboard extends StatelessWidget {
         onUserMenuSelected: (value) {
           // Handle user menu selection
         },
-      ),
-      body: Center(
-        child: Text(
-          'Dashboard XD',
-          style: Theme.of(context).textTheme.headlineMedium,
-        ),
+        pageTitle: 'Dashboard',
+        child: Center(child: Text('Dashboard XD')),
       ),
     );
   }
