@@ -13,16 +13,6 @@ class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
     return AppLayout(
-      currentRoute: GoRouterState.of(context).uri.toString(),
-      onNavigate: (page) {
-        context.go(page);
-      },
-      onSearchChanged: (query) {
-        // Handle search query changes
-      },
-      onUserMenuSelected: (item) {
-        // Handle user menu item selection
-      },
       child: Center(child: Text('Settings Page')),
     );
   }

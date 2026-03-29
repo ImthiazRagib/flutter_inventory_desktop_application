@@ -16,28 +16,28 @@ final GoRouter router = GoRouter(
     //   },
     // ),
     ShellRoute(
-      builder: (context, state, child) {
-        return child; // This will render the child route
-      },
+      // builder: (context, state, child) {
+      //   return child; // This will render the child route
+      // },
       // redirect: (context, state) => {
       //   // Redirect to the dashboard route when the root path is accessed
       //   return null; // No redirection, just render the child route
       // },
       routes: [
         GoRoute(
-          path: '',
+          path: '/',
           builder: (context, state) {
             return const Dashboard();
           },
         ),
         GoRoute(
-          path: 'reports',
+          path: '/reports',
           builder: (context, state) {
             return const ReportsPage();
           },
         ),
         GoRoute(
-          path: 'settings',
+          path: '/settings',
           builder: (context, state) {
             return const SettingsPage();
           },

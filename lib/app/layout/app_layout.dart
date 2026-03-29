@@ -8,29 +8,19 @@ class AppLayout extends StatelessWidget {
   const AppLayout({
     super.key,
     required this.child,
-    required this.currentRoute,
     this.pageTitle = '',
-    this.currentPage = 'Home',
-    required this.onNavigate,
-    required this.onSearchChanged,
-    required this.onUserMenuSelected,
   });
 
   final Widget child;
-  final String currentRoute;
   final String pageTitle;
-  final String currentPage;
-
-  final void Function(String page) onNavigate;
-  final void Function(String value) onSearchChanged;
-  final void Function(String value) onUserMenuSelected;
 
   @override
   Widget build(BuildContext context) {
+    final String location = GoRouterState.of(context).uri.toString();
     return Scaffold(
       body: Row(
         children: [
-          PrimarySidebar(currentRoute: currentRoute),
+          PrimarySidebar(currentRoute: location),
           Expanded(
             child: Column(
               children: [
@@ -56,20 +46,20 @@ class AppLayout extends StatelessWidget {
                       const SizedBox(width: 20),
                       NavLink(
                         label: 'Dashboard',
-                        isActive: currentPage == '/',
-                        onTap: () => onNavigate('/'),
+                        isActive: location == '/',
+                        onTap: () => context.go('/'),
                       ),
                       const SizedBox(width: 12),
                       NavLink(
                         label: 'Reports',
-                        isActive: currentPage == '/reports',
-                        onTap: () => onNavigate('/reports'),
+                        isActive: location == '/reports',
+                        onTap: () => context.go('/reports'),
                       ),
                       const SizedBox(width: 12),
                       NavLink(
                         label: 'Settings',
-                        isActive: currentPage == '/settings',
-                        onTap: () => onNavigate('/settings'),
+                        isActive: location == '/settings',
+                        onTap: () => context.go('/settings'),
                       ),
                       const Spacer(),
                       SizedBox(
@@ -91,12 +81,8 @@ class AppLayout extends StatelessWidget {
                       const SizedBox(width: 16),
                       PopupMenuButton<String>(
                         onSelected: (value) {
-                          if (value == 'settings') {
-                            Navigator.pushReplacementNamed(
-                              context,
-                              '/settings',
-                            );
-                          }
+                          print("DD-$value");
+                          context.go('/$value');
                         },
                         itemBuilder: (context) => const [
                           PopupMenuItem(
@@ -113,7 +99,7 @@ class AppLayout extends StatelessWidget {
                           children: [
                             IconButton(
                               onPressed: () {
-                               context.push('/notifications');
+                                context.push('/notifications');
                               },
                               icon: Icon(Icons.notifications),
                             ),

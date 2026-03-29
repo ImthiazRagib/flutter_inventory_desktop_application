@@ -7,23 +7,8 @@ class Dashboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final location = GoRouterState.of(context).uri.toString();
-    print(location);
     return Scaffold(
       body: AppLayout(
-        currentRoute: location,
-        onNavigate: (page) {
-          print(page);
-          // Handle navigation
-          print(page);
-          GoRouter.of(context).go(page);
-        },
-        onSearchChanged: (value) {
-          // Handle search
-        },
-        onUserMenuSelected: (value) {
-          // Handle user menu selection
-        },
         pageTitle: '',
         child: Center(child: Text('Dashboard XD')),
       ),

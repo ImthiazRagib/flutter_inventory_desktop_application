@@ -37,7 +37,7 @@ class PrimarySidebar extends StatelessWidget {
           _SidebarItem(
             icon: Icons.dashboard_outlined,
             title: 'Dashboard',
-            routeName: '/dashboard',
+            routeName: '/',
             currentRoute: currentRoute,
           ),
           _SidebarItem(
@@ -127,14 +127,14 @@ class _SidebarItem extends StatelessWidget {
               children: [
                 Icon(
                   icon,
-                  color: isActive ? AppColors.primaryColor.withOpacity(0.1) : AppColors.primaryColor,
+                  color: AppColors.primaryColor,
                 ),
                 const SizedBox(width: 12),
                 Expanded(
                   child: Text(
                     title,
                     style: TextStyle(
-                      color: isActive ? AppColors.primaryColor : AppColors.primaryColor,
+                      color: AppColors.primaryColor,
                       fontWeight:
                           isActive ? FontWeight.bold : FontWeight.w500,
                     ),

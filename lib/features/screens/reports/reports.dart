@@ -12,20 +12,7 @@ class ReportsPage extends StatefulWidget {
 class _ReportsPageState extends State<ReportsPage> {
   @override
   Widget build(BuildContext context) {
-    final String currentRoute = GoRouterState.of(context).uri.toString();
-    void onNavigate(String page) {
-      context.go(page);
-    }
-
     return AppLayout(
-      currentRoute: currentRoute,
-      onNavigate: onNavigate,
-      onSearchChanged: (value) {
-        // Handle search
-      },
-      onUserMenuSelected: (value) {
-        // Handle user menu selection
-      },
       child: Center(child: Text('Reports')),
     );
   }
