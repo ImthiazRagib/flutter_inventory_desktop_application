@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inventory_desktop_application/app/layout/primary_sidebar.dart';
+import 'package:flutter_inventory_desktop_application/core/utils/app.colors.dart';
 import 'package:flutter_inventory_desktop_application/features/common/nav_link.dart';
 
 class AppLayout extends StatelessWidget {
@@ -37,7 +38,7 @@ class AppLayout extends StatelessWidget {
                   width: double.infinity,
                   padding: const EdgeInsets.symmetric(horizontal: 24),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: AppColors.lightColor,
                     border: Border(
                       bottom: BorderSide(color: Colors.grey.shade300),
                     ),
@@ -51,23 +52,24 @@ class AppLayout extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      // NavLink(
-                      //   label: 'Home',
-                      //   isActive: currentPage == 'Home',
-                      //   onTap: () => onNavigate('Home'),
-                      // ),
-                      // const SizedBox(width: 12),
-                      // NavLink(
-                      //   label: 'Products',
-                      //   isActive: currentPage == 'Products',
-                      //   onTap: () => onNavigate('Products'),
-                      // ),
-                      // const SizedBox(width: 12),
-                      // NavLink(
-                      //   label: 'About',
-                      //   isActive: currentPage == 'About',
-                      //   onTap: () => onNavigate('About'),
-                      // ),
+                      const SizedBox(width: 20),
+                      NavLink(
+                        label: 'Home',
+                        isActive: currentPage == 'Home',
+                        onTap: () => onNavigate('Home'),
+                      ),
+                      const SizedBox(width: 12),
+                      NavLink(
+                        label: 'Products',
+                        isActive: currentPage == 'Products',
+                        onTap: () => onNavigate('Products'),
+                      ),
+                      const SizedBox(width: 12),
+                      NavLink(
+                        label: 'About',
+                        isActive: currentPage == 'About',
+                        onTap: () => onNavigate('About'),
+                      ),
                       const Spacer(),
                       SizedBox(
                         width: 260,

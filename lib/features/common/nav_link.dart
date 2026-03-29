@@ -15,34 +15,38 @@ class NavLink extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      borderRadius: BorderRadius.circular(8),
-      onTap: onTap,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
-        child: Column(
-          children: [
-            Text(
-              label,
-              style: TextStyle(
-                color: isActive ? AppColors.primaryColor : AppColors.darkColor,
-                fontSize: 14,
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(8),
+        onTap: onTap,
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                label,
+                style: TextStyle(
+                  color: isActive
+                      ? AppColors.primaryColor
+                      : AppColors.darkColor,
+                  fontSize: 14,
+                  fontWeight: isActive ? FontWeight.w700 : FontWeight.normal,
+                ),
               ),
-            ),
-
-            SizedBox(height: 4),
-
-            // 🔻 Underline
-            AnimatedContainer(
-              duration: const Duration(milliseconds: 250),
-              height: 2,
-              width: isActive ? 30 : 0,
-              decoration: BoxDecoration(
-                color: AppColors.primaryColor,
-                borderRadius: BorderRadius.circular(2),
+              const SizedBox(height: 4),
+              AnimatedContainer(
+                duration: const Duration(milliseconds: 200),
+                height: 2,
+                width: isActive ? 20 : 0,
+                decoration: BoxDecoration(
+                  color: AppColors.primaryColor,
+                  borderRadius: BorderRadius.circular(2),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

@@ -16,6 +16,7 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return Consumer<ThemeProvider>(builder: (context, themeProvider, child) {
       return MaterialApp.router(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: AppTheme.lightTheme,
         darkTheme: AppTheme.darkTheme,

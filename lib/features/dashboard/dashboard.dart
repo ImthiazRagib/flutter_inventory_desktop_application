@@ -7,8 +7,7 @@ class Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: AppLayout(
-        currentRoute: '/',
-        currentPage: 'Dashboard',
+        currentRoute: 'home',
         onNavigate: (page) {
           // Handle navigation
         },
@@ -18,7 +17,7 @@ class Dashboard extends StatelessWidget {
         onUserMenuSelected: (value) {
           // Handle user menu selection
         },
-        pageTitle: 'Dashboard',
+        pageTitle: '',
         child: Center(child: Text('Dashboard XD')),
       ),
     );
