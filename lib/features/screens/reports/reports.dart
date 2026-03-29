@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inventory_desktop_application/app/layout/app_layout.dart';
-import 'package:go_router/go_router.dart';
 
 class ReportsPage extends StatefulWidget {
   const ReportsPage({super.key});
