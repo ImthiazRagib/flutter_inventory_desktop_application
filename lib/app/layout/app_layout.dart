@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_inventory_desktop_application/app/layout/primary_sidebar.dart';
 import 'package:flutter_inventory_desktop_application/core/utils/app.colors.dart';
 import 'package:flutter_inventory_desktop_application/features/common/nav_link.dart';
+import 'package:go_router/go_router.dart';
 
 class AppLayout extends StatelessWidget {
   const AppLayout({
@@ -54,28 +55,28 @@ class AppLayout extends StatelessWidget {
                       ),
                       const SizedBox(width: 20),
                       NavLink(
-                        label: 'Home',
-                        isActive: currentPage == 'Home',
-                        onTap: () => onNavigate('Home'),
+                        label: 'Dashboard',
+                        isActive: currentPage == '/',
+                        onTap: () => onNavigate('/'),
                       ),
                       const SizedBox(width: 12),
                       NavLink(
-                        label: 'Products',
-                        isActive: currentPage == 'Products',
-                        onTap: () => onNavigate('Products'),
+                        label: 'Reports',
+                        isActive: currentPage == '/reports',
+                        onTap: () => onNavigate('/reports'),
                       ),
                       const SizedBox(width: 12),
                       NavLink(
-                        label: 'About',
-                        isActive: currentPage == 'About',
-                        onTap: () => onNavigate('About'),
+                        label: 'Settings',
+                        isActive: currentPage == '/settings',
+                        onTap: () => onNavigate('/settings'),
                       ),
                       const Spacer(),
                       SizedBox(
                         width: 260,
                         child: TextField(
                           decoration: InputDecoration(
-                            hintText: 'Search...',
+                            hintText: 'Search entries...',
                             prefixIcon: const Icon(Icons.search),
                             isDense: true,
                             filled: true,
@@ -108,13 +109,19 @@ class AppLayout extends StatelessWidget {
                           ),
                           PopupMenuItem(value: 'logout', child: Text('Logout')),
                         ],
-                        child: const Row(
+                        child: Row(
                           children: [
+                            IconButton(
+                              onPressed: () {
+                               context.push('/notifications');
+                              },
+                              icon: Icon(Icons.notifications),
+                            ),
                             CircleAvatar(radius: 18, child: Icon(Icons.person)),
-                            SizedBox(width: 8),
-                            Text('Imthiaz'),
-                            SizedBox(width: 4),
-                            Icon(Icons.keyboard_arrow_down),
+                            // SizedBox(width: 8),
+                            // Text('Imthiaz'),
+                            // SizedBox(width: 4),
+                            // Icon(Icons.keyboard_arrow_down),
                           ],
                         ),
                       ),

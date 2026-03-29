@@ -1,5 +1,7 @@
 
-import 'package:flutter_inventory_desktop_application/features/dashboard/dashboard.dart';
+import 'package:flutter_inventory_desktop_application/features/screens/dashboard/dashboard.dart';
+import 'package:flutter_inventory_desktop_application/features/screens/reports/reports.dart';
+import 'package:flutter_inventory_desktop_application/features/screens/settings/settings.dart';
 import 'package:go_router/go_router.dart';
 
 final GoRouter router = GoRouter(
@@ -23,9 +25,21 @@ final GoRouter router = GoRouter(
       // },
       routes: [
         GoRoute(
-          path: '/',
+          path: '',
           builder: (context, state) {
             return const Dashboard();
+          },
+        ),
+        GoRoute(
+          path: 'reports',
+          builder: (context, state) {
+            return const ReportsPage();
+          },
+        ),
+        GoRoute(
+          path: 'settings',
+          builder: (context, state) {
+            return const SettingsPage();
           },
         ),
       ],
