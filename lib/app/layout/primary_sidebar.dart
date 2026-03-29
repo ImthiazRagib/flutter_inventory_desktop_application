@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inventory_desktop_application/core/utils/app.colors.dart';
+import 'package:go_router/go_router.dart';
 
 class PrimarySidebar extends StatelessWidget {
   const PrimarySidebar({
@@ -65,24 +66,30 @@ class PrimarySidebar extends StatelessWidget {
             width: double.infinity,
             padding: const EdgeInsets.all(20),
             color: AppColors.primaryColor,
-            child: const Row(
-              children: [
-                CircleAvatar(
-                  radius: 20,
-                  child: Icon(Icons.person),
-                ),
-                SizedBox(width: 12),
-                Expanded(
-                  child: Text(
-                    'Imthiaz Ragib',
-                    style: TextStyle(
-                      color: AppColors.lightColor,
-                      fontWeight: FontWeight.w600,
-                    ),
-                    overflow: TextOverflow.ellipsis,
+            child: InkWell(
+              onTap: () {
+                // Handle profile tap, e.g., navigate to profile page
+                context.go('/profile');
+              },
+              child: const Row(
+                children: [
+                  CircleAvatar(
+                    radius: 20,
+                    child: Icon(Icons.person),
                   ),
-                ),
-              ],
+                  SizedBox(width: 12),
+                  Expanded(
+                    child: Text(
+                      'Imthiaz Ragib',
+                      style: TextStyle(
+                        color: AppColors.lightColor,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
@@ -117,7 +124,8 @@ class _SidebarItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
           onTap: () {
             if (!isActive) {
-              Navigator.pushReplacementNamed(context, routeName);
+              // Use GoRouter for navigation
+              context.go(routeName);
             }
           },
           child: Container(

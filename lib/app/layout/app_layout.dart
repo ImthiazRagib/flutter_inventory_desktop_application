@@ -99,7 +99,7 @@ class AppLayout extends StatelessWidget {
                           children: [
                             IconButton(
                               onPressed: () {
-                                context.push('/notifications');
+                                context.go('/notifications');
                               },
                               icon: Icon(Icons.notifications),
                             ),
